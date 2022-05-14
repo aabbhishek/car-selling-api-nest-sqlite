@@ -9,10 +9,11 @@ export class CurrentUserInterceptor implements NestInterceptor {
     next: CallHandler<any>,
   ): Promise<Observable<any>> {
     const request = context.switchToHttp().getRequest();
-    const { userId } = request.session || {};
+    const { id } = request.session || {};
+    console.log(this.userService);
 
-    if (userId) {
-      const user = await this.userService.findOne(userId);
+    if (id) {
+      const user = await this.userService.findOne(id);
       request.CurrentUser = user;
     }
 
