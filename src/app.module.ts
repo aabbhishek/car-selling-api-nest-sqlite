@@ -8,7 +8,6 @@ import { Report } from './reports/reports.entities';
 import { User } from './users/users.entities';
 import { APP_PIPE } from '@nestjs/core';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { config } from 'process';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const cookieSession = require('cookie-session');
 @Module({
