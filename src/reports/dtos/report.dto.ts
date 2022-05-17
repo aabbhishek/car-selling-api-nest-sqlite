@@ -1,4 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
+import { Column } from 'typeorm';
 
 export class ReportDto {
   @Expose()
@@ -17,6 +18,8 @@ export class ReportDto {
   model: string;
   @Expose()
   mileage: number;
+  @Expose()
+  approved: boolean;
 
   @Transform(({ obj }) => obj.user.id)
   @Expose()
